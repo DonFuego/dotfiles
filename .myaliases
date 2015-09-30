@@ -1,0 +1,23 @@
+# Custom Aliases
+
+alias reload="source ~/.zshrc"
+alias dev="cd ~/Dev"
+alias d="ls -alh"
+alias bato="cd /Users/todmatth/Dev/java/projects/bridgestone/BATO"
+alias start_aem="$AEM_HOME/crx-quickstart/bin/quickstart"
+alias dms="/Users/todmatth/Dev/dms"
+alias tomcat="cd $TOMCAT_HOME"
+alias starttomcat="$TOMCAT_HOME/bin/startup.sh"
+alias stoptomcat="$TOMCAT_HOME/bin/shutdown.sh"
+alias tailtomcat="tail -f $TOMCAT_HOME/logs/catalina.out"
+alias top=htop
+
+# Work AWS Server Aliases
+alias ssh-dev="ssh -i ~/.ssh/bato_rsa ec2-user@54.204.44.182"
+alias ssh-qa1="ssh -i ~/.ssh/bato_rsa ec2-user@107.22.180.254"
+alias ssh-qa2="ssh -i ~/.ssh/bato_rsa ec2-user@107.21.241.233"
+alias ssh-qa3="ssh -i ~/.ssh/bato_rsa ec2-user@54.204.36.188"
+alias ssh-qa4="ssh -i ~/.ssh/bato_rsa ec2-user@54.83.7.189"
+alias ssh-uat2="ssh -i ~/.ssh/bato_rsa ec2-user@54.221.219.130"
+alias ssh-prod-dispatch1="ssh -i ~/.ssh/bato_rsa ec2-user@54.161.208.254"
+alias ssh-prod-dispatch2="ssh -i ~/.ssh/bato_rsa ec2-user@54.83.117.195"
