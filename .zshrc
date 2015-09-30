@@ -79,27 +79,14 @@ export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/munki"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# Load .myaliases file
+if [[ -a ~/.myaliases ]]; then
+	source ~/.myaliases
+else
+	echo "No .myaliases file found!"
+fi
+
 export AEM_HOME=/Users/todmatth/Dev/java/projects/bridgestone/server/AEM-6.1
-
-# Custom Aliases
-alias reload="source ~/.zshrc"
-alias dev="cd ~/Dev"
-alias d="ls -alh"
-alias bato="cd /Users/todmatth/Dev/java/projects/bridgestone/BATO"
-alias start_aem="$AEM_HOME/crx-quickstart/bin/quickstart"
-alias dms="/Users/todmatth/Dev/dms"
-alias tomcat="cd $TOMCAT_HOME"
-alias starttomcat="$TOMCAT_HOME/bin/startup.sh"
-alias stoptomcat="$TOMCAT_HOME/bin/shutdown.sh"
-alias tailtomcat="tail -f $TOMCAT_HOME/logs/catalina.out"
-alias top=htop
-
-# AWS Server Aliases
-alias ssh-qa3="ssh -i ~/.ssh/bato_rsa ec2-user@54.204.36.188"
-alias ssh-qa4="ssh -i ~/.ssh/bato_rsa ec2-user@54.83.7.189"
-alias ssh-uat2="ssh -i ~/.ssh/bato_rsa ec2-user@54.221.219.130"
-alias ssh-prod-dispatch1="ssh -i ~/.ssh/bato_rsa ec2-user@54.161.208.254"
-alias ssh-prod-dispatch2="ssh -i ~/.ssh/bato_rsa ec2-user@54.83.117.195"
 
 export JAVA_HOME=$(/usr/libexec/java_home)
 export TOMCAT_HOME="/Users/todmatth/Dev/java/apache-tomcat-7.0.57"
@@ -117,12 +104,10 @@ export GOROOT=/usr/local/Cellar/go/1.4.2
 # Amazon AWS Commandline Tools
 export EC2_HOME=/usr/local/ec2/ec2-api-tools-1.7.2.4
 export PATH=$PATH:$EC2_HOME/bin:$VAULT_HOME/bin
-export AWS_ACCESS_KEY=--access key here--
-export AWS_SECRET_KEY=--secret key here--
+#export AWS_ACCESS_KEY=--access key here--
+#export AWS_SECRET_KEY=--secret key here--
 
 # Boot2Docker
 export DOCKER_HOST=tcp://192.168.59.103:2376
 export DOCKER_CERT_PATH=/Users/todmatth/.boot2docker/certs/boot2docker-vm
 export DOCKER_TLS_VERIFY=1
-
-
