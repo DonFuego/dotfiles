@@ -1,14 +1,20 @@
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="pygmalion"
+# Path to your oh-my-zsh installation.
+export ZSH=/Users/tmatthews/.oh-my-zsh
+
+# Set name of the theme to load. Optionally, if you set this to "random"
+# it'll load a random theme each time that oh-my-zsh is loaded.
+# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+ZSH_THEME="spaceship"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
+
+# Uncomment the following line to use hyphen-insensitive completion. Case
+# sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -45,13 +51,12 @@ ZSH_THEME="pygmalion"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/munki"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -68,7 +73,7 @@ export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/munki"
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -85,33 +90,75 @@ source $(brew --prefix nvm)/nvm.sh
 
 # Load .myaliases file
 if [[ -a ~/.myaliases ]]; then
-	source ~/.myaliases
+    source ~/.myaliases
 else
-	echo "No .myaliases file found!"
+    echo "No .myaliases file found!"
 fi
 
-export AEM_HOME=/Users/todmatth/Dev/java/projects/bridgestone/server/AEM-6.1
+# Homebrew Installation of PHP 5.6 w/ composer and other dependencies
+# export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
 
-export JAVA_HOME=$(/usr/libexec/java_home)
-export TOMCAT_HOME="/Users/todmatth/Dev/java/apache-tomcat-7.0.57"
-export PLAY_HOME="/Users/todmatth/Dev/java/play-1.2.5.3"
+# Load .mediaos2 file
+#if [[ -a ~/.mediaos2 ]]; then
+#        source ~/.mediaos2
+#else
+#        echo "No .mediaos2 file found!"
+#fi
 
-export AMAZON_HOME="/Users/todmatth/Dev/amazon/AWS-ElasticBeanstalk-CLI-2.6.4"
-export MAVEN_HOME="/Users/todmatth/Dev/java/apache-maven-3.2.5"
-export PATH="/usr/local/bin:/usr/local/sbin:$PATH:$PLAY_HOME:$TOMCAT_HOME/bin:$MAVEN_HOME/bin:$AMAZON_HOME/api/bin:/usr/local/opt/go/libexec/bin:$GOPATH/bin"
+# Go Lang Initialization
+# -------
+# $GOPATH/src : Where your Go projects / programs are located
+# $GOPATH/pkg : contains every package objects
+# $GOPATH/bin : The compiled binaries home
 
-export VAULT_HOME="/opt/vault-cli-3.1.6"
+export GOPATH=$HOME/Dev/projects/go
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOROOT/bin
+#export GOENV_ROOT=$HOME/.goenv
+#eval "$(goenv init -)"
 
-export GOPATH=/Users/todmatth/Dev/gocode
-export GOROOT=/usr/local/Cellar/go/1.4.2
+# Other Path Updates
+# ------------------
+export PATH=$PATH:/usr/local/sbin
 
-# Amazon AWS Commandline Tools
-export EC2_HOME=/usr/local/ec2/ec2-api-tools-1.7.2.4
-export PATH=$PATH:$EC2_HOME/bin:$VAULT_HOME/bin
-#export AWS_ACCESS_KEY=--access key here--
-#export AWS_SECRET_KEY=--secret key here--
+# Set Spaceship ZSH as a prompt
+autoload -U promptinit; promptinit
+prompt spaceship
 
-# Boot2Docker
-export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_CERT_PATH=/Users/todmatth/.boot2docker/certs/boot2docker-vm
-export DOCKER_TLS_VERIFY=1
+# Set NPM Registry (JFrog) Information
+export NPM_AUTH=dG1hdHRoZXdzOkFQM0J4c2hHSGRhYk5CTUxocTZ4QjV0QWNrVQ==
+export NPM_PASS=dWxXB7TV
+export NPM_EMAIL=tmatthews@hearstautos.com
+export NPM_USER=tmatthews
+
+# JAVA Settings
+export M2_HOME=/Users/tmatthews/Dev/projects/java/apache-maven-3.5.3
+export PATH=$PATH:$M2_HOME/bin
+
+# Python VirtualEnv Autoenv Initialization
+#source /usr/local/opt/autoenv/activate.sh
+
+# export GITHUB_TOKEN=969fa3e26f6c9b75a22899d9a4ba677e26d1b96a
+# export GITHUB_TOKEN=40d0765436c5d0b107bd806d1b9bdd3d46176b62
+export GITHUB_TOKEN=b1654aed8ab253d3ce766cd522a0c9c2e5458a54
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/tmatthews/.nvm/versions/node/v8.9.4/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/tmatthews/.nvm/versions/node/v8.9.4/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/tmatthews/.nvm/versions/node/v8.9.4/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/tmatthews/.nvm/versions/node/v8.9.4/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+
+# added by travis gem
+[ -f /Users/tmatthews/.travis/travis.sh ] && source /Users/tmatthews/.travis/travis.sh
+
+# Burden API Key - Move to .mediaos!
+export BURDEN_API_KEY=ooreigh2Aighouleetei4shaeGheiz
+
+# Media OS Platform
+export MOS_FOLDER=/Users/tmatthews/Dev/projects/hearst/media-platform
+docker login -u 'donfuego' -p 'KZ/EQ0Obo3l+Iy/4t66xl5r5XhaWkTbel7kIe+wk3GLpe8aOLpZvfCtj+r0oTs6B' quay.io
+export ENABLE_PARASITE=false
+
+export PATH=/Users/tmatthews/.local/bin:$PATH
