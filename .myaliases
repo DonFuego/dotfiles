@@ -3,7 +3,6 @@
 alias reload="source ~/.zshrc"
 alias dev="cd ~/Dev"
 alias d="ls -alh"
-alias bato="cd /Users/todmatth/Dev/java/projects/bridgestone/BATO"
 alias start_aem="$AEM_HOME/crx-quickstart/bin/quickstart"
 alias tomcat="cd $TOMCAT_HOME"
 alias starttomcat="$TOMCAT_HOME/bin/startup.sh"
@@ -13,34 +12,28 @@ alias top=htop
 alias setjdk6='export JAVA_HOME=$(/usr/libexec/java_home -v 1.6)'
 alias setjdk7='export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)'
 alias setjdk8='export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)'
+alias setjdk10='export JAVA_HOME=$(/usr/libexec/java_home -v 10)'
+alias startSynergy=/Applications/Synergy.app/Contents/MacOS/synergy --server -f --debug DEBUG --name tmatthews --enable-drag-drop --profile-dir /Users/tmatthews/Library/Synergy --log /Users/tmatthews/Library/Synergy/synergy-core.log -c /Users/tmatthews/Library/Synergy/synergy.conf --address :24800
+alias startPostgres="pg_ctl -D /usr/local/var/postgres start"
+alias stopPostgres="pg_ctl -D /usr/local/var/postgres stop"
+alias statusPostgres="pg_ctl -D /usr/local/var/postgres status"
 
-# Work AWS Server Aliases
-alias ssh-dev="ssh -i ~/.ssh/bato_rsa ec2-user@54.204.44.182"
-alias ssh-qa1="ssh -i ~/.ssh/bato_rsa ec2-user@107.22.180.254"
-alias ssh-qa2="ssh -i ~/.ssh/bato_rsa ec2-user@107.21.241.233"
-alias ssh-qa3="ssh -i ~/.ssh/bato_rsa ec2-user@54.204.36.188"
-alias ssh-qa4="ssh -i ~/.ssh/bato_rsa ec2-user@54.83.7.189"
-alias ssh-uat2="ssh -i ~/.ssh/bato_rsa ec2-user@54.221.219.130"
-alias ssh-prod-dispatch1="ssh -i ~/.ssh/bato_rsa ec2-user@54.161.208.254"
-alias ssh-prod-dispatch2="ssh -i ~/.ssh/bato_rsa ec2-user@54.83.117.195"
-alias ssh-prod-publish1="ssh -i ~/.ssh/bato_rsa ec2-user@54.221.195.111"
-alias ssh-prod-solr="ssh -i ~/.ssh/bato_rsa ec2-user@54.225.165.68"
-alias ssh-my-server="ssh todmatth@10.11.122.216"
-alias ssh-haproxy="ssh -i ~/.ssh/bstaws_rsa ubuntu@23.21.251.76"
+# Git
+alias gi="git init && gac 'Initial commit'"
+alias gs="git status"
+alias glog='git log --graph --all --decorate'
+alias gac="git add . && git commit -m" # + commit message
+alias gp="git push" # + remote & branch names
+alias gpo="git push origin" # + branch name
+alias gpom="git push origin master"
+alias gl="git pull" # + remote & branch names
+alias glo="git pull origin" # + branch name
+alias glom="git pull origin master"
+alias gb="git branch" # + branch name
+alias gc="git checkout" # + branch name
+alias gcb="git checkout -b" # + branch name
 
-# CWH VPN
-alias vpn-int="sudo openvpn --config ~/.ssh/openvpn/Bridgestone_QA_INT.ovpn"
-alias vpn-uat="sudo openvpn --config ~/.ssh/openvpn/Bridgestone_UAT.ovpn"
-alias vpn-prod="sudo openvpn --config ~/.ssh/openvpn/Bridgestone_PROD.ovpn"
-alias vpn-ssh-apache1="ssh cwh\\\\todd.matthews@192.168.3.5"
-alias vpn-ssh-apache2="ssh cwh\\\\todd.matthews@192.168.3.37"
-alias vpn-ssh-publish1="ssh cwh\\\\todd.matthews@192.168.3.6"
-alias vpn-ssh-publish2="ssh cwh\\\\todd.matthews@192.168.3.38"
-alias vpn-ssh-tomcat1="ssh cwh\\\\todd.matthews@192.168.3.11"
-alias vpn-ssh-tomcat1="ssh cwh\\\\todd.matthews@192.168.3.40"
-alias vpn-ssh-varnish1="ssh cwh\\\\todd.matthews@192.168.3.4"
-alias vpn-ssh-varnish2="ssh cwh\\\\todd.matthews@192.168.3.36"
-
-alias hosts-local="sudo cp /Users/todmatth/Dev/java/projects/bridgestone/BATO/cwh-util/host-scripts/hosts_bup /etc/hosts"
-alias hosts-int="/Users/todmatth/Dev/java/projects/bridgestone/BATO/cwh-util/host-scripts/int-cwh-hosts-update.sh"
-alias hosts-qa="/Users/todmatth/Dev/java/projects/bridgestone/BATO/cwh-util/host-scripts/qa-cwh-hosts-update.sh"
+# Development Project Aliases
+alias penguin="cd ~/Dev/projects/Hearst/penguin"
+alias joker="cd ~/Dev/projects/Hearst/media-platform/joker"
+alias mos2="cd ~/Dev/projects/Hearst/media-platform"
